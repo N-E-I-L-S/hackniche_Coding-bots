@@ -7,8 +7,7 @@ export default function Home() {
   return (
     <>
     <div>Home</div>
-    <NavLink to='/login'> Login </NavLink>
-    <button onClick={logout}>Logout</button>
+    
     </>
   )
 }
