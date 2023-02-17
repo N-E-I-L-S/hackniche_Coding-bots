@@ -5,7 +5,9 @@ import  ErrorPage  from './pages/ErrorPage';
 // import { Footer } from './components/Footer';
 import Login from './pages/login/Login';
 import Landing from './pages/Landing';
-// import ProtectedRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
+import Signup from './pages/login/Signup';
+import ForgotPassword from './pages/login/ForgotPassword';
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
             <Route path="/home" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/home" element={<Home />}></Route>
-            
+            <Route path='/signup' element={<Signup/>}></Route>
+            <Route path='/forgotpass' element={<ForgotPassword/>}></Route>
             <Route path="*" element={<ErrorPage />}></Route>
           </Routes>
         </div>
