@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import UserAuth from '../context/AuthContext'
 import { Navigate } from 'react-router';
+import Navbar from '../components/Navbar';
 
 export default function Profile() {
     const { user, profilename, setProfilename, hometown, setHometown, age, setAge, force, setForce } = UserAuth();
@@ -43,6 +44,7 @@ export default function Profile() {
 
     return (
         <>
+        <Navbar/>
         <div className="landingpage">
             <div className="landingpage-div">
 
