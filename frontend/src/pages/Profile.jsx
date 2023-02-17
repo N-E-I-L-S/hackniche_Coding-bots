@@ -9,7 +9,7 @@ export default function Profile() {
     const page = useRef(age); 
     const ptown = useRef(hometown); 
 
-    const [edit, setEdit] = useState(1);
+    const [edit, setEdit] = useState(0);
 
     function changeprofilename(){
         setProfilename(pname.current.value)
@@ -19,7 +19,8 @@ export default function Profile() {
     }
 
     function saveprofile(){
-        setTimeout(PostRequest, 2000);
+        console.log(pname.current.value)
+        setTimeout(PostRequest, 3000);
     }
 
     function PostRequest (){
@@ -28,7 +29,7 @@ export default function Profile() {
     method : 'POST',
     mode : 'cors',
      body :JSON.stringify({
-          email : user.email || null,
+          email : user.email,
           Name : pname.current.value,
           Force : pforce.current.value,
           Age : page.current.value,
@@ -42,13 +43,21 @@ export default function Profile() {
 
     return (
         <>
+        <div className="landingpage">
+            <div className="landingpage-div">
+
+            <div className="profile">
+            <div className="non-editable">
+
             <h2>Your Credentials</h2>
             <button onClick={()=>setEdit(1)}>Edit Profile</button>
             <p>
                 Email ID:{user.email}
             </p>
-            
-            <div >
+            </div>
+            <div className="editable">
+
+            <div  className='profile-block'>
                 Name:
                 {
                     edit === 0 ?
@@ -61,42 +70,52 @@ export default function Profile() {
                     }
             </div>
 
-            
+            <div className='profile-block'>
+
                 Force:
                 {
                     edit === 0 ?
                     <div>{pforce.current.value}</div>
                     :
-                <div>
+                    <div>
                         <input type="text" ref={pforce} />
                         <button onClick={changeprofilename}>Change</button>
                     </div>
                      }
+                     </div>
+                     <div className='profile-block'>
+
                 Age:
                 {
-                        edit === 0 ?
-                        <div>{page.current.value}</div>
-                        :
+                    edit === 0 ?
+                    <div>{page.current.value}</div>
+                    :
                     <div>
                         <input type="number" ref={page} />
                         <button onClick={changeprofilename}>Change</button>
                     </div>
                 }
+                </div>
             
-            
+                <div className='profile-block'>
+
                 Town:
                     {
                         edit === 0 ?
                         <div>{ptown.current.value}</div>
                         :
-                    <div>
+                        <div>
                         <input type="text" ref={ptown} />
                         <button onClick={changeprofilename}>Change</button>
                     </div>
                 }
+                </div>
 
                     <button onClick={saveprofile}>Save Profile</button>
-                    
+                </div>
+                </div>
+                    </div>
+        </div>     
         </>
     )
 }
