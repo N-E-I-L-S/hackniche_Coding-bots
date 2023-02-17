@@ -5,7 +5,7 @@ import  ErrorPage  from './pages/ErrorPage';
 // import { Footer } from './components/Footer';
 import Login from './pages/login/Login';
 import Landing from './pages/Landing';
-import ProtectedRoute from './components/ProtectedRoute';
+// import ProtectedRoute from './components/ProtectedRoute';
 
 
 function App() {
