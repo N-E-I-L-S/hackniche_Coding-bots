@@ -1,0 +1,38 @@
+.landingpage{
+    background-color: #b0d37c;
+    color: #646819;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.landingpage-div{
+    padding: 5%;
+    background-color: white;
+    width: 70vw;
+    border-radius: 2rem;
+    display: flex;
+}
+.lefttext{
+    width: 40vw;
+}
+.right-img{
+    padding-left: 5vw;
+    width: 50vw;
+}
+.bg-img{
+    height: 60vh;
+}
+.td{
+    color: #646819;
+    text-decoration: none;
+    padding: 0.25rem 0.33rem;
+    border: 1px solid #646819;
+    border-radius: 0.25rem;
+}
+.td:hover{
+    border: 1px solid #646819;
+    background-color: #646819;
+    color: white;
+}
