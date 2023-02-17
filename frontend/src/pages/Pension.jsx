@@ -6,8 +6,11 @@ export default function Pension() {
     return (
         <>
             <div className="pension-page">
-                <h3>Pension</h3>
-                <h5>To claim Indian Army pension, the following steps need to be taken:</h5>
+                
+
+
+                    <h3>Pension</h3>
+                    <h5>To claim Indian Army pension, the following steps need to be taken:</h5>
                     <div className="pension-block">
                         Obtain the required documents: The first step is to gather all the necessary documents, including the discharge certificate, pension payment order, and documents related to family members such as the marriage certificate, birth certificates of children.
                     </div>
@@ -35,14 +38,19 @@ export default function Pension() {
                     <div className="pension-block">
                         Receive your pension: Once the verification process is complete, you will start receiving your pension. The amount of pension will depend on various factors such as the rank and length of service of the retiree, and the number of family members entitled to receive pension.
                     </div>
-                </div>
-                <div className="pension-links">
-                    <h4>Specially Aggregated Links</h4>
-                    <div className="td">
-                    <a href="https://desw.gov.in/en/pensions">Government Website for Pension</a> 
+                    <div className="pension-arrow">
+                        <img src={Arrow} alt="" />
+                    </div>
+                
+            </div>
+            <div className="pension-links">
+                <h4>Specially Aggregated Links</h4>
+                <div className="td">
+                    <a href="https://desw.gov.in/en/pensions">Government Website for Pension</a>
                     <a href="https://desw.gov.in/en/benefits-widows-battle-casualties">Benefits to Widow</a>
                     <a href="https://www.mod.gov.in/dod/sites/default/files/Part-II_H.pdf">All Files Regarding Pension</a>
-                     </div>
+                </div>
+
             </div>
         </>
     )

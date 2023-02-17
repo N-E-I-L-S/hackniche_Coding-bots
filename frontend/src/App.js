@@ -15,10 +15,11 @@ import Pension from './pages/Pension';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition"
+import { useNavigate } from 'react-router-dom';
 
 
 function App() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   
   const commands = [
@@ -26,35 +27,32 @@ function App() {
       command: ["Open *"],
       callback: redirectPage =>
       {
-        console.log('started')
-        console.log(redirectPage)
         setRedirectUrl(redirectPage)
-
       } 
     },
   ]
   const { transcript } = useSpeechRecognition({ commands })
   const [redirectUrl, setRedirectUrl] = useState("0")
+  const [redirect, setRedirect] = useState(" ")
+
   const pages = ["home", "jobs", "pension", "profile"]
   const urls = {
     home: "/home",
     jobs: "/jobs",
     pension: "/pension",
     profile: "/profile",
-  }
-
+  }  
+  
+  
+  useEffect(()=>{
+    SpeechRecognition.startListening();
+    if (pages.includes(transcript)) {
+      navigate(urls[transcript])
+    }
+  },[transcript])
+  
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null
-  }
-
-  let redirect = ""
-  
-  if (redirectUrl) {
-    if (pages.includes(redirectUrl)) {
-      
-    } else {
-      redirect = <p>Could not find page: {redirectUrl}</p>
-    }
   }
 
   return (
@@ -77,10 +75,9 @@ function App() {
         </div>
         {redirect}
         {/* <Footer /> */}
-        <p id="transcript">Transcript: {transcript}</p>
-      <button onClick={SpeechRecognition.startListening}>Start</button>
-      
-
+        {/* <p id="transcript">Transcript: {transcript}</p> */}
+      {/* <button onClick={SpeechRecognition.startListening}>Start</button> */}
+      {/* <button onClick={SpeechRecognition.stopListening}>Stop</button> */}
     </div>
   );
 }
