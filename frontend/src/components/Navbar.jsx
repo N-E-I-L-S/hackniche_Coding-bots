@@ -17,7 +17,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
     return (
-        <Disclosure as="nav" className="bg-green-cus-1">
+        <Disclosure as="nav" className="bg-green-cus-1 -mt-1 z-10">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -36,7 +36,7 @@ export default function Navbar() {
 
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
-                                    <div className="flex space-x-4">
+                                    <div className="flex space-x-5 ml-52">
                                         {navigation.map((item) => (
                                             <NavLink
                                                 key={item.name}
@@ -50,6 +50,8 @@ export default function Navbar() {
                                                 {item.name}
                                             </NavLink>
                                         ))}
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>
