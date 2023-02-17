@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import UserAuth from '../../context/AuthContext';
 import { NavLink, Navigate } from 'react-router-dom'
+// import Image from '../components/login_page_img.png'
 
-export default function Login() {
+export default function LoginPage() {
     const { user, login } = UserAuth()
     const uname = useRef();
     const pwd = useRef();
@@ -21,7 +22,7 @@ export default function Login() {
             setLogged1(false);
         }
     };
-    // if(user==null)
+    if(user==null)
     return (
         <>
             <div className="login-page">
@@ -69,6 +70,6 @@ export default function Login() {
             </div>
         </>
     )
-    // else 
-    // return <Navigate to ='/home'/>
+    else 
+    return <Navigate to ='/home'/>
 }

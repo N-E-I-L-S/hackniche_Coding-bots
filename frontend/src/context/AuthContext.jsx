@@ -39,6 +39,11 @@ export function UserProvider({ children }) {
         
         return await confirmPasswordReset(auth, oobCode, newPassword)
       }
+    
+    const [profilename, setProfilename] = useState(" ")  
+    const [force, setForce] = useState(" ")  
+    const [age, setAge] = useState(0)  
+    const [hometown, setHometown ] = useState(" ")  
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
@@ -52,7 +57,22 @@ export function UserProvider({ children }) {
     }, []);
 
     return (
-        <UserContext.Provider value={{ user, setUser, login, signup, logout, passwordReset, confirmPasswordReset }}>
+        <UserContext.Provider value={{ user,
+         setUser, 
+         login, 
+         signup, 
+         logout,
+         passwordReset,
+         confirmPasswordReset,
+         profilename,
+         setProfilename,
+         force,
+         setForce,
+         age,
+         setAge,
+         hometown,
+         setHometown,
+         }}>
             {children}
         </UserContext.Provider>
     )
