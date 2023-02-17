@@ -22,7 +22,7 @@ export default function Landing() {
                         <div className="login-link">
 
                         <h3>
-                        <NavLink className="td" to='/login'>Login Here</NavLink>
+                        <NavLink className="td" onClick={{}} to='/login'>Login Here</NavLink>
                         </h3>
                         </div>
                     </div>

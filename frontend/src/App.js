@@ -16,6 +16,7 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition"
 import { useNavigate } from 'react-router-dom';
+import Jobs from './pages/Jobs';
 
 
 function App() {
@@ -66,7 +67,7 @@ function App() {
             <Route path="/home" element={<Home />}></Route>
             <Route path="/pension" element={<Pension />}></Route>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/home" element={<Home />}></Route>
+            <Route path="/jobs" element={<Jobs />}></Route>
             <Route path='/signup' element={<Signup/>}></Route>
             <Route path='/forgotpass' element={<ForgotPassword/>}></Route>
             <Route path='/profile' element={<Profile/>}></Route>
