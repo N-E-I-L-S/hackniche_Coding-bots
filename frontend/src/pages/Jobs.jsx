@@ -2,26 +2,47 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import JobsCard from '../components/JobsCard'
 import './Jobs.css'
+import Navbar from '../components/Navbar'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Jobs() {
-    const no= [0, 1, 2, 3, 4, 5]
+
+    const [data, setData] = useState(null)
+    useEffect(() => {
+            fetch('http://localhost:3001/api/jobs/alljobs')
+            .then(response => response.json())
+            .then(data => setData(data));
+    }, [])
+
     return (
-        <>
+        data && (
+            <>
+            <Navbar />
             <div className="jobspage">
                 <div className="jobspage-div">
-                    <div>
-                    <h3>Employment Opportunities</h3>
-                    <hr />
+                    <div className="leftdiv">
+                        <label htmlFor="search">Search Your Job</label>
+                        <input name="search" type="text" />
                     </div>
-                    <div className="jobs-card-div">
-                        {no.map((i)=>{
-                            return <div key={i}>
-                            <JobsCard i/>
-                            </div>
-                        })}
+                    <div className="rightdiv">
+                        <div>
+                            <h3 className='text-3xl'>Employment Opportunities</h3>
+                            <hr />
+                        </div>
+                        <div className="jobs-card-div">
+                            
+                            {data.map((i) => {
+                                return <div key={i}>
+                                    <JobsCard props={i} />
+                                </div>
+                            }) }
+                        </div>
                     </div>
                 </div>
             </div>
         </>
+        )
+        
     )
 }

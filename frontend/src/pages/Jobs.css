@@ -1,21 +1,21 @@
 .jobspage{
     background-color: #b0d37c;
     color: #646819;
-    height: 100vh;
-    width: 100vw;
+    height: 90vh;
+    width: 98.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .jobspage-div{
-    padding: 5%;
+    padding: 5% 2%;
     background-color: white;
-    width: 70vw;
+    width: 95vw;
     height: fit-content;
     border-radius: 2rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
 }
 .jobs-card-div{
@@ -23,15 +23,22 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 70vw;
+    width: 60vw;
 }
 .jobscard{
     margin: 2px;
     border: 2px solid #b0d37c;
     padding: 0.5rem;
     border-radius: 0.25rem;
+    width: 19vw;
 }
 .jobscard:hover{
     color: white;
     background-color: #b0d37c;
+}
+.leftdiv{
+    padding: 2rem;
+    background-color: #f3fee1;
+    width: 20vw;
+    height: 62vh;
 }

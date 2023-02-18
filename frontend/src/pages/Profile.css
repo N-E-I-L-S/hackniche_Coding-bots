@@ -1,7 +1,7 @@
 .profilepage{
     background-color: #b0d37c;
     color: #646819;
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@ button{
     background-color: #b0d37c;
     color: white;
     border: 0;
-    padding: 0.5rem;
+    padding: 0.25rem;
     border: 1px solid #b0d37c;
     border-radius: 3px;
 }

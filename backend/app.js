@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/api/user', require("./routes/user"))
+app.use('/api/jobs', require("./routes/jobs"))
 
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`)

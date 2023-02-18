@@ -1,6 +1,6 @@
 .pension-page{
-    border: 1px solid black;
-    padding: 5%;
+    text-align: center;
+    padding: 2% 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,8 +8,17 @@
 }
 .pension-block{
     width: 75%;
-    border: 1px solid black;
     padding: 2rem;
     border-radius: 7px;
     background-color: #b0d37c;
+}
+.pension-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.pension-text{
+    color: #646819;
+    text-align: center;
+    padding: 1rem;
 }

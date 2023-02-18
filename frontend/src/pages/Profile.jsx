@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import UserAuth from '../context/AuthContext'
 import { Navigate } from 'react-router';
 import './Profile.css'
+import Navbar from '../components/Navbar';
 
 export default function Profile() {
     const { user, profilename, setProfilename, hometown, setHometown, age, setAge, force, setForce } = UserAuth();
@@ -46,6 +47,7 @@ export default function Profile() {
 
     return (
         <>
+        <Navbar/>
             <div className="profilepage">
                 <div className="profilepage-div">
 
@@ -55,11 +57,11 @@ export default function Profile() {
                             <h2>Your Credentials</h2>
                             <hr />
                             <div className="profile-details">
-
-                                <button onClick={() => setEdit(1)}>Edit Profile</button>
                                 <p>
-                                    Email ID:{user.email}
+
+                                    Email ID: {user.email || null}
                                 </p>
+                                <button onClick={() => setEdit(1)}>Edit Profile</button>
                             </div>
                             <div className="editable">
 

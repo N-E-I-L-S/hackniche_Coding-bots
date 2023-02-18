@@ -4,6 +4,7 @@ const User = require("../models/User")
 
 
 router.post('/solBio',function(req,res,next){
+    console.log(req.body)
     User.create(req.body).then(function(user){
         res.send(user);
     }).catch(next);
