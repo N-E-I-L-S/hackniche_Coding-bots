@@ -1,3 +1,35 @@
-.profile-block{
-    padding: 2rem;
+.profilepage{
+    background-color: #b0d37c;
+    color: #646819;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profilepage-div{
+    padding: 2% ;
+    background-color: white;
+    width: 40vw;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+button{
+    background-color: #b0d37c;
+    color: white;
+    border: 0;
+    padding: 0.25rem;
+    border: 1px solid #b0d37c;
+    border-radius: 3px;
+}
+button:hover{
+    color: #b0d37c;
+    background-color: white;
+    border: 1px solid #b0d37c;
+}
+.profile-details{
+    margin-top: 6vh;
 }

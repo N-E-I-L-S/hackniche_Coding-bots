@@ -1,4 +1,5 @@
 .landingpage{
+    line-height: normal;
     background-color: #b0d37c;
     color: #646819;
     height: 100vh;
@@ -15,7 +16,7 @@
     display: flex;
 }
 .lefttext{
-    width: 40vw;
+    width: 30vw;
 }
 .right-img{
     padding-left: 5vw;

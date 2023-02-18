@@ -1,7 +1,10 @@
-import React from 'react'
+import Error from '../components/404-error-page.gif'
+import './ErrorPage.css'
 
 export default function ErrorPage() {
   return (
-    <div>ErrorPage</div>
+    <div className='errorpage'>
+        <img className='err' src={Error} alt="" />
+    </div>
   )
 }
