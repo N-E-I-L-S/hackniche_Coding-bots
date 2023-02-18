@@ -53,6 +53,7 @@ function App() {
     if (pages.includes(transcript)) {
       navigate(urls[transcript])
     }
+
   }, [transcript])
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
