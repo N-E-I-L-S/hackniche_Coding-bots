@@ -10,9 +10,8 @@ export default function Home() {
       <Navbar />
       <div className='p-10'>
         <h1 className='main-text uppercase text-green-cus-2'>
-          WarCrop is aimed at providing support for national military forces.
+          Empowering our Military Community - Together.
         </h1>
-        <p className='text-green-cus-1 text-lg '> the natios sdkfa;da fdkfasdlkf</p>
 
       </div>
       <div className=" mt-15 relative">
@@ -20,26 +19,19 @@ export default function Home() {
         <img className='absolute rounded-lg  w-72 right-60 bottom-14 mt-10' src="https://t3.ftcdn.net/jpg/04/91/37/46/240_F_491374697_G3TdemQd93VSJBDff2CuPn9729yclvYi.jpg" alt="" />
         <div className=''>
           <div className='m-10  w-1/2 right-2' >
-            <h2 className='font-bold text-3xl text-green-cus-2 mb-3'>jobs and skill development</h2>
-            <p cla>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, libero rerum voluptas molestiae provident unde in vel consequuntur sunt veritatis recusandae. Corrupti consectetur dicta mollitia et deserunt deleniti accusamus adipisci!</p>
+            <p cla>Welcome to our platform, dedicated to supporting our nation's military and their families. Our goal is to make their lives easier by providing a range of resources and services, including financial assistance, counseling, job placement, education, and community support. Together, we can empower our military community and show our gratitude for   their service.!</p>
           </div>
-        </div>
-        <div className=''>
           <div className='m-10  w-1/2 right-2' >
-            <h2 className='font-bold text-3xl text-green-cus-2 mb-3'>jobs and skill development</h2>
-            <p cla>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, libero rerum voluptas molestiae provident unde in vel consequuntur sunt veritatis recusandae. Corrupti consectetur dicta mollitia et deserunt deleniti accusamus adipisci!</p>
+            <p cla>The welfare of our military men and women is a duty we owe them as a grateful nation. The care and support of our military personnel is crucial for their continued service and the strength of our society.</p>
           </div>
-        </div>
-        <div className=''>
           <div className='m-10  w-1/2 right-2' >
-            <h2 className='font-bold text-3xl text-green-cus-2 mb-3'>jobs and skill development</h2>
-            <p cla>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, libero rerum voluptas molestiae provident unde in vel consequuntur sunt veritatis recusandae. Corrupti consectetur dicta mollitia et deserunt deleniti accusamus adipisci!</p>
+            <p cla>Ensuring the welfare of our military personnel is not just policy, it's a reflection of our values as a nation.Taking care of our military personnel is the right thing to do, and essential for building a strong and resilient society.</p>
           </div>
         </div>
       </div>
 
-      <div className="main-container bg-green-cus-1 h-52">
-        hi
+      <div className="main-container bg-green-cus-1 h-52 mt-32">
+
 
       </div>
 

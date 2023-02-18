@@ -45,12 +45,12 @@ function App() {
     profile: "/profile",
   }
 
-
   useEffect(() => {
     SpeechRecognition.startListening();
     if (pages.includes(transcript)) {
       navigate(urls[transcript])
     }
+
   }, [transcript])
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
