@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import logo from "../images/logo.png"
 import { NavLink } from 'react-router-dom'
+import UserAuth from '../context/AuthContext'
 
 const navigation = [
     { name: 'Home', href: '/home', current: false },
@@ -16,6 +17,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+    const {logout} = UserAuth();
     return (
         <Disclosure as="nav" className="bg-green-cus-1 -mt-1 z-10">
             {({ open }) => (
@@ -81,32 +83,20 @@ export default function Navbar() {
                                         <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="#"
+                                                    <NavLink to="/profile"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Your Profile
-                                                    </a>
+                                                    </NavLink>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                    >
-                                                        Settings
-                                                    </a>
-                                                )}
-                                            </Menu.Item>
-                                            <Menu.Item>
-                                                {({ active }) => (
-                                                    <a
-                                                        href="#"
+                                                    <NavLink to='/' onClick={logout}
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Sign out
-                                                    </a>
+                                                    </NavLink>
                                                 )}
                                             </Menu.Item>
                                         </Menu.Items>

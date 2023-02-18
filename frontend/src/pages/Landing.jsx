@@ -16,14 +16,14 @@ export default function Landing() {
                             <li className='my-1'>education</li>
                             <li className='my-1'>forum</li>
                         </ul>
-                        <h4 className='mt-2 mb-1'>
+                        <h4 className='mt-2 mb-3'>
                             For connecting with others.
                         </h4>
                         <div className="login-link ">
 
-                            <h3>
-                                <NavLink className="td rounded-lg" to='/login'>Login Here</NavLink>
-                            </h3>
+                        <h3>
+                        <NavLink className="td"  to='/login'>Login Here</NavLink>
+                        </h3>
                         </div>
                     </div>
                     <div className="right-img">

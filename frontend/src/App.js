@@ -33,18 +33,20 @@ function App() {
       }
     },
   ]
-  const { transcript } = useSpeechRecognition({ commands })
+  let { transcript } = useSpeechRecognition({ commands })
   const [redirectUrl, setRedirectUrl] = useState("0")
   const [redirect, setRedirect] = useState(" ")
 
-  const pages = ["home", "jobs", "pension", "profile"]
+  const pages = ["home", "jobs", "pension", "profile", "community", 'blog']
   const urls = {
     home: "/home",
     jobs: "/jobs",
     pension: "/pension",
     profile: "/profile",
-  }
+    community : "/community",
+    blog : "/blog"
 
+  }
 
   useEffect(() => {
     SpeechRecognition.startListening();
@@ -64,10 +66,10 @@ function App() {
       <div className='min-h-screen'>
         <Routes>
           <Route path='/' element={<Landing />} />
-          {/* <Route path='/home' element={<ProtectedRoute page={<Home />} />} /> */}
-          <Route path="/home" element={<Home />}></Route>
+          <Route path='/home' element={<ProtectedRoute page={<Home />} />} />
+          {/* <Route path="/home" element={<Home />}></Route> */}
           <Route path="/pension" element={<Pension />}></Route>
-          <Route path="/login" element={<Login />}></Route>
+          <Route path="/login" element={<Login />}/>
           <Route path='/signup' element={<Signup />}></Route>
           <Route path='/forgotpass' element={<ForgotPassword />}></Route>
           <Route path='/profile' element={<Profile />}></Route>
