@@ -30,10 +30,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="main-container bg-green-cus-1 h-52 mt-32">
 
-
-      </div>
 
     </>
   )

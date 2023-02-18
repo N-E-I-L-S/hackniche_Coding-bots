@@ -7,8 +7,8 @@ import UserAuth from '../context/AuthContext'
 const navigation = [
     { name: 'Home', href: '/home', current: false },
     { name: 'Jobs', href: '/jobs', current: false },
-    { name: 'Community', href: '/community', current: false },
-    { name: 'Blog', href: '/blog', current: false },
+    { name: 'Community', href: 'localhost:3001', current: false },
+    { name: 'Blog', href: 'localhost:3000', current: false },
     { name: 'Pension', href: '/pension', current: false },
 ]
 
@@ -17,15 +17,15 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-    const {logout} = UserAuth();
+    const { logout } = UserAuth();
     return (
-        <Disclosure as="nav" className="bg-green-cus-1 -mt-1 z-10">
+        <Disclosure as="nav" className="bg-green-cus-1 -mt-14 z-10">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                                {/* Mobile menu button*/}
+                                VeerMitra
 
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -40,9 +40,9 @@ export default function Navbar() {
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-5 ml-52">
                                         {navigation.map((item) => (
-                                            <NavLink
+                                            <a
                                                 key={item.name}
-                                                to={item.href}
+                                                href={item.href}
                                                 className={classNames(
                                                     item.current ? ' text-green-cus-2' : 'text-green-cus-2 hover:bg-green-cus-2 hover:text-white',
                                                     'px-3 py-2 rounded-md text-sm font-medium'
@@ -50,10 +50,10 @@ export default function Navbar() {
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
-                                            </NavLink>
+                                            </a>
                                         ))}
-                                        
-                                        
+
+
                                     </div>
                                 </div>
                             </div>

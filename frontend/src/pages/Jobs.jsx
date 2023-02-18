@@ -17,9 +17,9 @@ export default function Jobs() {
 
     return (
         data && (
-            <>
+            <div className='bg-green-cus-1'>
                 <Navbar />
-                <div className="jobspage">
+                <div className="jobspage bg-green-cus-1 mt-20">
                     <div className="jobspage-div">
                         <div className="leftdiv">
                             <label htmlFor="search">Search Your Job</label>
@@ -41,7 +41,7 @@ export default function Jobs() {
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )
 
     )
