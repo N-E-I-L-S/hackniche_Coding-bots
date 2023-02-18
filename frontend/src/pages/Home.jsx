@@ -9,8 +9,8 @@ export default function Home() {
     <>
       <Navbar />
       <div className='p-10'>
-        <h1 className='main-text uppercase text-green-cus-2'>
-          Empowering our Military Community - Together.
+        <h1 className='main-text uppercase text-green-cus-2 font-bold leading-5'>
+          Empowering our Military Community - वीरमित्र
         </h1>
 
       </div>
