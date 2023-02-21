@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserProvider } from './context/AuthContext';
 import { BrowserRouter as Router } from 'react-router-dom';
+import {JobsProvider} from './context/JobsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <Router>
 
     <UserProvider>
+      <JobsProvider>
     <App />
+      </JobsProvider>
     </UserProvider>
     </Router>
   </React.StrictMode>
