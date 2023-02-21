@@ -33,7 +33,7 @@ function App() {
       }
     },
   ]
-  let { transcript } = useSpeechRecognition({ commands })
+  let { listening, transcript, resetTranscript } = useSpeechRecognition({ commands })
   const [redirectUrl, setRedirectUrl] = useState("0")
   const [redirect, setRedirect] = useState(" ")
 
@@ -48,12 +48,18 @@ function App() {
 
   }
 
+  listening=true;
+
+  // console.log(listening)
+
   useEffect(() => {
-    SpeechRecognition.startListening();
+    setInterval(SpeechRecognition.startListening, 1000);
     if (pages.includes(transcript)) {
       navigate(urls[transcript])
+      console.log(transcript)
+      resetTranscript();
     }
-
+    return clearInterval()
   }, [transcript])
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
