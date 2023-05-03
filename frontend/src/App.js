@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 import Jobs from './pages/Jobs';
 import Blog from './pages/Blog';
 import { Community } from './pages/Community';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
       }
     },
   ]
-  let { listening, transcript, resetTranscript } = useSpeechRecognition({ commands })
+  // let { listening, transcript, resetTranscript } = useSpeechRecognition({ commands })
   const [redirectUrl, setRedirectUrl] = useState("0")
   const [redirect, setRedirect] = useState(" ")
 
@@ -43,28 +44,29 @@ function App() {
     jobs: "/jobs",
     pension: "/pension",
     profile: "/profile",
-    community : "/community",
-    blog : "/blog"
+    community: "/community",
+    blog: "/blog"
 
   }
 
-  listening=true;
+  // listening = true;
 
-  // console.log(listening)
+  // // console.log(listening)
 
-  useEffect(() => {
-    setInterval(SpeechRecognition.startListening, 1000);
-    if (pages.includes(transcript)) {
-      navigate(urls[transcript])
-      console.log(transcript)
-      resetTranscript();
-    }
-    return clearInterval()
-  }, [transcript])
+  // useEffect(() => {
+  //   setInterval(SpeechRecognition.startListening, 1000);
 
-  if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-    return null
-  }
+  //   if (pages.includes(transcript)) {
+  //     navigate(urls[transcript])
+  //     console.log(transcript)
+  //     resetTranscript();
+  //   }
+  //   return clearInterval()
+  // }, [transcript])
+
+  // if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
+  //   return null
+  // }
 
   return (
     <div className="">
@@ -76,7 +78,7 @@ function App() {
           <Route path='/home' element={<ProtectedRoute page={<Home />} />} />
           {/* <Route path="/home" element={<Home />}></Route> */}
           <Route path="/pension" element={<Pension />}></Route>
-          <Route path="/login" element={<Login />}/>
+          <Route path="/login" element={<Login />} />
           <Route path='/signup' element={<Signup />}></Route>
           <Route path='/forgotpass' element={<ForgotPassword />}></Route>
           <Route path='/profile' element={<Profile />}></Route>

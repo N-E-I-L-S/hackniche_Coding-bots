@@ -8,7 +8,7 @@ const navigation = [
     { name: 'Home', href: '/home', current: false },
     { name: 'Jobs', href: '/jobs', current: false },
     { name: 'Community', href: 'localhost:3001', current: false },
-    { name: 'Blog', href: 'localhost:3000', current: false },
+    { name: 'Blog', href: 'blog', current: false },
     { name: 'Pension', href: '/pension', current: false },
 ]
 
@@ -19,7 +19,7 @@ function classNames(...classes) {
 export default function Navbar() {
     const { logout } = UserAuth();
     return (
-        <Disclosure as="nav" className="bg-green-cus-1 -mt-14 z-10">
+        <Disclosure as="nav" className="bg-green-cus-1  z-10">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

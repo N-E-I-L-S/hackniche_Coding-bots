@@ -23,27 +23,27 @@ export function UserProvider({ children }) {
         return createUserWithEmailAndPassword(auth, uname, pwd)
     }
 
-    function logout(){
+    function logout() {
         setUser(null);
         return signOut(auth)
     }
 
     const passwordReset = async (email) => {
         return await sendPasswordResetEmail(auth, email)
-      }
-    
-      const confirmThePasswordReset = async (
-         oobCode="", newPassword=""
-      ) => {
-        if(!oobCode && !newPassword) return;
-        
+    }
+
+    const confirmThePasswordReset = async (
+        oobCode = "", newPassword = ""
+    ) => {
+        if (!oobCode && !newPassword) return;
+
         return await confirmPasswordReset(auth, oobCode, newPassword)
-      }
-    
-    const [profilename, setProfilename] = useState(" ")  
-    const [force, setForce] = useState(" ")  
-    const [age, setAge] = useState(0)  
-    const [hometown, setHometown ] = useState(" ")  
+    }
+
+    const [profilename, setProfilename] = useState(" ")
+    const [force, setForce] = useState(" ")
+    const [age, setAge] = useState(0)
+    const [hometown, setHometown] = useState(" ")
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
@@ -57,22 +57,23 @@ export function UserProvider({ children }) {
     }, []);
 
     return (
-        <UserContext.Provider value={{ user,
-         setUser, 
-         login, 
-         signup, 
-         logout,
-         passwordReset,
-         confirmPasswordReset,
-         profilename,
-         setProfilename,
-         force,
-         setForce,
-         age,
-         setAge,
-         hometown,
-         setHometown,
-         }}>
+        <UserContext.Provider value={{
+            user,
+            setUser,
+            login,
+            signup,
+            logout,
+            passwordReset,
+            confirmPasswordReset,
+            profilename,
+            setProfilename,
+            force,
+            setForce,
+            age,
+            setAge,
+            hometown,
+            setHometown,
+        }}>
             {children}
         </UserContext.Provider>
     )
