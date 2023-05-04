@@ -24,8 +24,7 @@ export default function LoginPage() {
             setLogged1(false);
         }
     };
-    if (user == null)
-        return (
+    
             <>
 
                 <div className="login-page relative">
@@ -33,7 +32,7 @@ export default function LoginPage() {
                     <div className="login-page-div">
                         <form onSubmit={(e) => {
                             e.preventDefault();
-                            handleLogin(uname.current.value, pwd.current.value)
+                            // handleLogin(uname.current.value, pwd.current.value)
                         }}
                         >
                             <div className="login-div text-lg text-center border-2 border-green-cus-1 p-5 bg-green-cus-1 rounded-lg shadow-2xl shadow-green-cus-2 ">
@@ -41,16 +40,7 @@ export default function LoginPage() {
                                     Login Page
                                 </h2>
 
-                                {logged ?
-                                    <p className='pmatch text-red-500'>Wrong Credentials</p>
-                                    :
-                                    null
-                                }
-                                {logged1 ?
-                                    <p className='pmatch-1 text-green-500'>Logged In!</p>
-                                    :
-                                    null
-                                }
+                                
 
                                 <div className="username">
                                     {/* <label htmlFor="">Username</label> <br /> */}
@@ -62,7 +52,7 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="btns">
-                                    <button type='submit' className='rounded-lg px-5 my-4 bg-green-cus-1 text-green-cus-2'>Login</button>
+                                    <NavLink to={"/home"}  className='rounded-lg px-5 my-4 bg-green-cus-1 text-green-cus-2' >Login</NavLink>
                                 </div>
                                 <div className=''>
                                     <NavLink className="border-2 border-green-cus-2 p-1 rounded-lg hover:bg-green-cus-2 hover:text-white my-10" to='/signup'>Don't have an account?  </NavLink> <br />
@@ -76,7 +66,6 @@ export default function LoginPage() {
                 </div>
 
             </>
-        )
-    else
-        return <Navigate to='/home' />
+        
+    
 }

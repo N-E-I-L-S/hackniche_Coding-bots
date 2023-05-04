@@ -8,7 +8,7 @@ const navigation = [
     { name: 'Home', href: '/home', current: false },
     { name: 'Jobs', href: '/jobs', current: false },
     { name: 'Community', href: 'localhost:3001', current: false },
-    { name: 'Blog', href: 'blog', current: false },
+    { name: 'Blog', href: '/blog', current: false },
     { name: 'Pension', href: '/pension', current: false },
 ]
 
@@ -40,9 +40,9 @@ export default function Navbar() {
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-5 ml-52">
                                         {navigation.map((item) => (
-                                            <a
+                                            <NavLink
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className={classNames(
                                                     item.current ? ' text-green-cus-2' : 'text-green-cus-2 hover:bg-green-cus-2 hover:text-white',
                                                     'px-3 py-2 rounded-md text-sm font-medium'
@@ -50,7 +50,7 @@ export default function Navbar() {
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </NavLink>
                                         ))}
 
 

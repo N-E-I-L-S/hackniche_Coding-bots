@@ -5,9 +5,7 @@ import Home from './pages/Home';
 import ErrorPage from './pages/ErrorPage';
 // import { Navbar } from './components/Navbar';
 // import { Footer } from './components/Footer';
-import Login from './pages/login/Login';
 import Landing from './pages/Landing';
-import ProtectedRoute from './components/ProtectedRoute';
 import Signup from './pages/login/Signup';
 import ForgotPassword from './pages/login/ForgotPassword';
 import Profile from './pages/Profile';
@@ -20,6 +18,7 @@ import Jobs from './pages/Jobs';
 import Blog from './pages/Blog';
 import { Community } from './pages/Community';
 import Navbar from './components/Navbar';
+import LoginPage from './pages/login/Login';
 
 
 function App() {
@@ -75,10 +74,10 @@ function App() {
       <div className='min-h-screen'>
         <Routes>
           <Route path='/' element={<Landing />} />
-          <Route path='/home' element={<ProtectedRoute page={<Home />} />} />
-          {/* <Route path="/home" element={<Home />}></Route> */}
+          {/* <Route path='/home' element={<ProtectedRoute page={<Home />} />} /> */}
+          <Route path="/home" element={<Home />}></Route>
           <Route path="/pension" element={<Pension />}></Route>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path='/signup' element={<Signup />}></Route>
           <Route path='/forgotpass' element={<ForgotPassword />}></Route>
           <Route path='/profile' element={<Profile />}></Route>

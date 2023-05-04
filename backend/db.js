@@ -1,7 +1,11 @@
-require('dotenv').config()
-const mongoose = require('mongoose');
-const mongoURI = "mongodb://localhost:27017"
-const connectToMongo =() =>{
-    mongoose.connect(mongoURI, ()=>console.log("connected to Mongo"))
-}
-module.exports = connectToMongo;
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/nodeapp', {useNewUrlParser: true});
+var conn = mongoose.connection;
+conn.on('connected', function() {
+    console.log('database is connected successfully');
+});
+conn.on('disconnected',function(){
+    console.log('database is disconnected successfully');
+})
+conn.on('error', console.error.bind(console, 'connection error:'));
+module.exports = conn;
