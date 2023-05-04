@@ -12,17 +12,26 @@ export default function LoginPage() {
     const [logged, setLogged] = useState(false);
     const [logged1, setLogged1] = useState(false);
     const handleLogin = async (email, password) => {
-        try {
-            await login(email, password);
+        // try {
+        //     await login(email, password);
+        //     <Navigate to='/home' />
+        //     console.log(email);
+        //     setLogged(false);
+        //     setLogged1(true);
+        // } catch (err) {
+        //     console.log(err);
+        //     setLogged(true);
+        //     setLogged1(false);
+        // }
+        if(password=="1405")
+        {
+            
             <Navigate to='/home' />
-            console.log(email);
-            setLogged(false);
-            setLogged1(true);
-        } catch (err) {
-            console.log(err);
-            setLogged(true);
-            setLogged1(false);
         }
+        else{
+            alert("Wrong Password")
+        }
+        console.log(password   )
     };
     if (user == null)
         return (
@@ -62,7 +71,7 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="btns">
-                                    <button type='submit' className='rounded-lg px-5 my-4 bg-green-cus-1 text-green-cus-2'>Login</button>
+                                    <NavLink  className='rounded-lg px-5 my-4 bg-green-cus-1 text-green-cus-2' to={"/home"}>Login</NavLink>
                                 </div>
                                 <div className=''>
                                     <NavLink className="border-2 border-green-cus-2 p-1 rounded-lg hover:bg-green-cus-2 hover:text-white my-10" to='/signup'>Don't have an account?  </NavLink> <br />
