@@ -15,11 +15,11 @@ export function UserProvider({ children }) {
     const [user, setUser] = useState("loading");
 
     function login(uname, pwd) {
-        console.log(uname);
+        // console.log(uname);
         return signInWithEmailAndPassword(auth, uname, pwd)
     }
     function signup(uname, pwd) {
-        console.log(uname)
+        // console.log(uname)
         return createUserWithEmailAndPassword(auth, uname, pwd)
     }
 
@@ -47,7 +47,7 @@ export function UserProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-            console.log("Auth", currentuser);
+            // console.log("Auth", currentuser);
             setUser(currentuser);
         });
 

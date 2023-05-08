@@ -10,12 +10,16 @@ const port = 3005
 
 app.use(cors())
 app.use(express.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.use('/api/user', require("./routes/user"))
+app.use('/api/blogs', require("./routes/blogs"))
+app.use('/api/blogs', require("./routes/fetchBlogs.js"))
 app.use('/api/jobs', require("./routes/jobs"))
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
 app.listen(port, () => {
-    console.log(`Example app listening on port http://localhost:${port}`)
+    console.log(`app listening on port http://localhost:${port}`)
 })

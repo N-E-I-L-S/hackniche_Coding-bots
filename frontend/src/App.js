@@ -75,7 +75,7 @@ function App() {
           <Route path='/forgotpass' element={<ForgotPassword />}></Route>
           <Route path='/profile' element={<Profile />}></Route>
           <Route path='/jobs' element={<Jobs />}></Route>
-          <Route path='/blog' element={<Blog />}></Route>
+          <Route path='/blogs' element={<Blog />}></Route>
           <Route path='/community' element={<Community />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
