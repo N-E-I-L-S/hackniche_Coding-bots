@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Axios from 'axios';
 import { BlogCard } from '../components/BlogCard';
+import { useEffect, useState } from 'react'
 
 export default function Blog() {
 
@@ -9,14 +9,15 @@ export default function Blog() {
   const [blog, setBlog] = useState({ title: "", content: "" })
   const handleSubmit = (e) => {
     console.log(blog);
-    e.preventDefault();
-    Axios.post("http://localhost:3005/api/blogs/insertBlog", { blog })
+    // e.preventDefault();
+    Axios.post("http://localhost:3005/api/post/insertblog", { blog })
       .then(res => {
         console.log(res.data);
       })
       .catch(err => {
         console.log(err);
       })
+    
   }
 
   //fetch blogs from mongoDB
@@ -32,7 +33,7 @@ export default function Blog() {
     <>
       <Navbar />
 
-      <div className="container">
+      <div className="container p-10">
         <div className="row">
           <h1 className="text-center text-3xl mt-3">Latest Blogs</h1>
           <div className="">
@@ -51,7 +52,7 @@ export default function Blog() {
         </div>
       </div>
       <h1 className="text-center text-3xl mt-3 capitalize my-5">Write your own adventure !</h1>
-      <div className="container">
+      <div className="container mb-10">
         <div className="row">
           <div className="col-md-6">
             <form onSubmit={handleSubmit}>
@@ -72,7 +73,7 @@ export default function Blog() {
               </div>
 
 
-              <button type="submit" className="btn btn-primary text-black mt-2">Submit</button>
+              <button type="submit" className="btn btn-primary text-black m-3">Submit</button>
             </form>
           </div>
 

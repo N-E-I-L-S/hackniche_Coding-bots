@@ -3,7 +3,7 @@ const router = express.Router()
 const Blog = require("../models/Blog")
 const app = express();
 
-app.post('/insertBlog',function(req,res){
+app.post('/insertblog',function(req,res){
         console.log("🚀 ~ file: blogs.js:7 ~ app.post ~ req:", req.body)
         
     const blog = new Blog({
